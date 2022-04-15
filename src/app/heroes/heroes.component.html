@@ -1,9 +1,20 @@
-<h2>Details:</h2>
+<h2>Pick a highlight color</h2>
+<div>
+  <input type="radio" name="colors" (click)="color = 'lightgreen'" />Green
+  <input type="radio" name="colors" (click)="color = 'yellow'" />Yellow
+  <input type="radio" name="colors" (click)="color = 'cyan'" />Cyan
+</div>
+<select (change)="setColor($event)">
+  <option value="green">green</option>
+  <option value="blue">blue</option>
+</select>
+<h2 [appTextcolor]="color">Details:</h2>
+
 <li *ngFor="let hero of heroes">
   <span class="badge">id:{{ hero.id }}</span>
-  {{ hero.name }}
+  <a appHighlighter routerLink="/detail/{{ hero.id }}">{{ hero.name }}</a>
   <button
-    [class.selected]="hero === selectHero"
+    [ngClass]="{ selected: hero === selectHero }"
     type="button"
     (click)="onSelect(hero)"
   ></button>

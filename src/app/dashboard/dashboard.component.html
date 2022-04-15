@@ -1,0 +1,18 @@
+<h2>Top Heroes</h2>
+<div class="heroes-menu">
+  <a routerLink="/detail/{{ hero.id }}" *ngFor="let hero of heroes">{{
+    hero.name
+  }}</a>
+</div>
+<div>
+  <label for="formcontrol">formControl</label>
+  <input id="formcontrol" type="text" [formControl]="favoriteColorControl" />
+</div>
+<div>
+  <label for="color">template driven form</label>
+  <input id="color" type="text" [(ngModel)]="favoriteColor" />
+</div>
+<div>
+  <h2>Show reactive form value:{{ favoriteColorControl.value }}</h2>
+  <h2>show template driven form value:{{ favoriteColor }}</h2>
+</div>

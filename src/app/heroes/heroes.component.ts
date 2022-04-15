@@ -11,6 +11,10 @@ import { MessageService } from '../message.service';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
+  color: string = 'red';
+  setColor(e: any): void {
+    this.color = e.target.value;
+  }
   selectHero?: Hero;
   onSelect(hero: Hero): void {
     this.selectHero = hero;
