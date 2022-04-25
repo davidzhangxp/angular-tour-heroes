@@ -1,8 +1,22 @@
-<h1>{{ title }}</h1>
-<nav>
-  <a routerLink="/heroes">Heroes</a> <a routerLink="/dashboard">Dashboard</a
-  ><a routerLink="/profile">Profile</a>
-</nav>
+<mat-toolbar>
+  <mat-icon color="primary" (click)="sidenav.toggle()">reorder</mat-icon>
+  <nav>
+    <a routerLink="/heroes">Heroes</a> <a routerLink="/dashboard">Dashboard</a
+    ><a routerLink="/profile">Profile</a>
+  </nav>
+</mat-toolbar>
+<mat-drawer-container class="example-container" autosize="">
+  <mat-drawer #sidenav [(opened)]="opened" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+  <mat-drawer-content>
+    <h1>{{ title }}</h1>
 
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+    <router-outlet></router-outlet>
+    <app-messages *ngIf="message"></app-messages>
+  </mat-drawer-content>
+</mat-drawer-container>

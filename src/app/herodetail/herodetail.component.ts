@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-herodetail',
@@ -11,10 +12,12 @@ import { HeroService } from '../hero.service';
 })
 export class HerodetailComponent implements OnInit {
   hero?: Hero;
+
   constructor(
     private heroService: HeroService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) {}
 
   getHero(): void {
@@ -23,6 +26,9 @@ export class HerodetailComponent implements OnInit {
   }
   goBack(): void {
     this.location.back();
+  }
+  goPlace(): void {
+    this.router.navigate(['/']);
   }
 
   ngOnInit(): void {

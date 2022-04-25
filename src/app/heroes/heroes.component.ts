@@ -12,6 +12,7 @@ import { MessageService } from '../message.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
   color: string = 'red';
+  badge: number = 4;
   setColor(e: any): void {
     this.color = e.target.value;
   }

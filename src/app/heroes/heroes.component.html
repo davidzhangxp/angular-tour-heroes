@@ -1,4 +1,6 @@
 <h2>Pick a highlight color</h2>
+<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+
 <div>
   <input type="radio" name="colors" (click)="color = 'lightgreen'" />Green
   <input type="radio" name="colors" (click)="color = 'yellow'" />Yellow
@@ -11,7 +13,7 @@
 <h2 [appTextcolor]="color">Details:</h2>
 
 <li *ngFor="let hero of heroes">
-  <span class="badge">id:{{ hero.id }}</span>
+  <span matBadge="{{ hero.id }}" matBadgeOverlap="false">id:</span>
   <a appHighlighter routerLink="/detail/{{ hero.id }}">{{ hero.name }}</a>
   <button
     [ngClass]="{ selected: hero === selectHero }"

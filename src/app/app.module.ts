@@ -15,6 +15,7 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { HighlighterDirective } from './highlighter.directive';
 import { TextcolorDirective } from './textcolor.directive';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
     }),
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

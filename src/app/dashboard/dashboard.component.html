@@ -16,3 +16,112 @@
   <h2>Show reactive form value:{{ favoriteColorControl.value }}</h2>
   <h2>show template driven form value:{{ favoriteColor }}</h2>
 </div>
+<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+<div class="example-box" cdkDrag>Drag me around</div>
+<div class="mat-display-1">font-display</div>
+<div class="mat-headline">this is a head for h1</div>
+<div class="mat-body-1">this is body text</div>
+<div class="mat-typegraphy">
+  <h1>normal h1</h1>
+</div>
+<button mat-flat-button color="warn" [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu" overlapTrigger="false">
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">Frontend</button>
+  <button mat-menu-item>Backend</button>
+</mat-menu>
+<mat-menu #subMenu="matMenu">
+  <button mat-menu-item>Angular</button>
+  <button mat-menu-item>react</button>
+  <button mat-menu-item>Vue</button>
+</mat-menu>
+<mat-selection-list #shoes [multiple]="false">
+  <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
+    {{ shoe }}
+  </mat-list-option>
+</mat-selection-list>
+
+<p>Option selected: {{ shoes.selectedOptions.selected[0]?.value }}</p>
+<p>autocomplete form:</p>
+<form class="matForm" (ngSubmit)="ngsubmit()">
+  <mat-form-field>
+    <input matInput type="text" [matAutocomplete]="auto" />
+    <mat-autocomplete #auto>
+      <mat-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
+        {{ shoe }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      [formControl]="pickdate"
+      [matDatepickerFilter]="myFilter"
+      [min]="minDate"
+      [max]="maxDate"
+    />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <button mat-flat-button type="submit">submit</button>
+</form>
+
+<h1>mat radio button</h1>
+<mat-radio-group aria-label="Select an option">
+  <mat-radio-button value="chocolate" checked="true"
+    >Chocolate</mat-radio-button
+  >
+  <mat-radio-button value="vanilla">Vanilla</mat-radio-button>
+  <mat-radio-button value="strawberry">Strawberry</mat-radio-button>
+</mat-radio-group>
+<h1>Checkbox</h1>
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Checkbox configuration</h2>
+
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="checked"
+        >Checked</mat-checkbox
+      >
+      <mat-checkbox class="example-margin" [(ngModel)]="indeterminate"
+        >Indeterminate</mat-checkbox
+      >
+    </section>
+
+    <section class="example-section">
+      <label class="example-margin">Align:</label>
+      <mat-radio-group [(ngModel)]="labelPosition">
+        <mat-radio-button class="example-margin" value="after"
+          >After</mat-radio-button
+        >
+        <mat-radio-button class="example-margin" value="before"
+          >Before</mat-radio-button
+        >
+      </mat-radio-group>
+    </section>
+
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="disabled"
+        >Disabled</mat-checkbox
+      >
+    </section>
+  </mat-card-content>
+</mat-card>
+<mat-card class="result">
+  <mat-card-content>
+    <h2 class="example-h2">Result</h2>
+
+    <section class="example-section">
+      <mat-checkbox
+        class="example-margin"
+        [(ngModel)]="checked"
+        [(indeterminate)]="indeterminate"
+        [labelPosition]="labelPosition"
+        [disabled]="disabled"
+      >
+        I'm a checkbox
+      </mat-checkbox>
+    </section>
+  </mat-card-content>
+</mat-card>
