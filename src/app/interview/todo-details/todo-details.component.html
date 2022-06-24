@@ -1,0 +1,5 @@
+<h2>{{ todo?.title }}</h2>
+<article>{{ todo?.content }}</article>
+<button [ngStyle]="{ background: todo?.color }" (click)="onPost()">
+  {{ todo?.color }}
+</button>

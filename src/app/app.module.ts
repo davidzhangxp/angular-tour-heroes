@@ -16,6 +16,8 @@ import { HighlighterDirective } from './highlighter.directive';
 import { TextcolorDirective } from './textcolor.directive';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import { MaterialModule } from './material/material.module';
+import { InterviewComponent } from './interview/interview.component';
+import { TodoDetailsComponent } from './interview/todo-details/todo-details.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { MaterialModule } from './material/material.module';
     HighlighterDirective,
     TextcolorDirective,
     ProfileEditorComponent,
+    InterviewComponent,
+    TodoDetailsComponent,
   ],
   imports: [
     BrowserModule,

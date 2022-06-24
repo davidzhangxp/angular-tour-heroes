@@ -1,8 +1,8 @@
-import { HighlighterDirective } from './highlighter.directive';
+// import { HighlighterDirective } from './highlighter.directive';
 
-describe('HighlighterDirective', () => {
-  it('should create an instance', () => {
-    const directive = new HighlighterDirective();
-    expect(directive).toBeTruthy();
-  });
-});
+// describe('HighlighterDirective', () => {
+//   it('should create an instance', () => {
+//     const directive = new HighlighterDirective();
+//     expect(directive).toBeTruthy();
+//   });
+// });

@@ -6,3 +6,9 @@ mat-toolbar {
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
+
+.nav-link-items {
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+}

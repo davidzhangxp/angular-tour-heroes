@@ -1,4 +1,4 @@
-<h2>Pick a highlight color</h2>
+<h2 [ngStyle]="{ color: 'red' }">Pick a highlight color</h2>
 <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
 
 <div>
@@ -11,6 +11,7 @@
   <option value="blue">blue</option>
 </select>
 <h2 [appTextcolor]="color">Details:</h2>
+<h2 [ngStyle]="{ color: color }">Test color change</h2>
 
 <li *ngFor="let hero of heroes">
   <span matBadge="{{ hero.id }}" matBadgeOverlap="false">id:</span>

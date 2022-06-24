@@ -1,7 +1,8 @@
 <div *ngIf="hero">
-  <h2>{{ hero.name | uppercase }}</h2>
+  <h2>{{ hero.name }}</h2>
   <div>
     <label for="name">Hero Name:</label>
     <input id="name" placeholder="name" [(ngModel)]="hero.name" />
+    <button (click)="onDeleteClick()">Delete</button>
   </div>
 </div>

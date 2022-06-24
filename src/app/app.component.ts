@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'tour-of-heroes';
+  title = 'angular-tour-heroes';
   message = true;
-  opened = true;
+  opened = false;
   showFiller = false;
 }

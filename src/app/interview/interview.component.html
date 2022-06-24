@@ -1,0 +1,16 @@
+<h1>{{ title }}</h1>
+<main class="container">
+  <div
+    *ngFor="let todo of todoList"
+    [ngStyle]="{
+      border:
+        todo.color === border_color ? '0.1rem solid ' + todo.color : 'none',
+      'border-radius': '1rem'
+    }"
+  >
+    <app-todo-details
+      [todo]="todo"
+      (todoEmitter)="onClick($event)"
+    ></app-todo-details>
+  </div>
+</main>

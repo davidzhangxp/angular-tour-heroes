@@ -21,7 +21,8 @@ export class TextcolorDirective implements OnInit {
   }
   constructor(private elRef: ElementRef) {}
   private highlight(color: string) {
-    this.elRef.nativeElement.style.backgroundColor = color;
+    this.elRef.nativeElement.style.color = color;
+    this.elRef.nativeElement.style.border = '0.1rem solid ' + color;
   }
   ngOnInit(): void {}
 }

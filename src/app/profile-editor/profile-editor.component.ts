@@ -26,7 +26,11 @@ export class ProfileEditorComponent implements OnInit {
   onSubmit() {
     console.log(this.profileForm.value);
   }
-
+  skillexps = [
+    { skill: 'react', exp: '2' },
+    { skill: 'swift', exp: '2' },
+    { skill: 'kotlin', exp: '3' },
+  ];
   constructor(private fb: FormBuilder) {}
 
   profileFB = this.fb.group({
@@ -38,16 +42,32 @@ export class ProfileEditorComponent implements OnInit {
       state: [''],
       zip: [''],
     }),
-    aliases: this.fb.array([this.fb.control('')]),
+    aliases: this.fb.array([]),
   });
-  onSubmitFB() {
-    console.log(this.profileFB.value);
+
+  newSkill(): FormGroup {
+    return this.fb.group({
+      skill: '',
+      exp: '',
+    });
   }
   get aliases() {
     return this.profileFB.get('aliases') as FormArray;
   }
   addAlias() {
-    this.aliases.push(this.fb.control(''));
+    this.aliases.push(this.newSkill());
   }
-  ngOnInit(): void {}
+
+  removeSkill(i: number) {
+    this.aliases.removeAt(i);
+  }
+  ngOnInit(): void {
+    this.skillexps.forEach((skillexp) => {
+      this.aliases.push(this.fb.group(skillexp));
+    });
+  }
+
+  onSubmitFB() {
+    console.log(this.profileFB.value);
+  }
 }
