@@ -32,4 +32,8 @@ describe('InterviewComponent', () => {
       fixture.debugElement.query(By.css('h1')).nativeElement.textContent
     ).toContain('def');
   });
+  it('should have the same color', () => {
+    component.onClick('red');
+    expect(component.border_color).toEqual('red');
+  });
 });
